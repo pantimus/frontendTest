@@ -1,0 +1,156 @@
+@import '../../styles';
+$addButton: 65px;
+.form-control{
+	
+	//margin-right: 15px;
+	margin-bottom: 15px;
+
+	padding: 10px;
+	//flex-basis: 30%;
+	font-size: 1.3em;
+	width: 100%;
+	
+}
+
+textarea{
+	resize: none;
+}
+
+.desc{
+	font-family: Arial;
+}
+
+.form-add-product {
+        display: block;
+        border: none;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 35px;
+        margin-bottom: 35px;
+        border-radius: 35px;
+        font-family: Arial;
+        background: white;
+        padding: 35px;
+        width: 60%;
+        font{
+    	family: Arial; 
+
+    }
+}
+.input-group
+{
+	display: flex;
+	width: 100%;
+	flex-wrap: wrap;
+}
+.btn
+{
+	background: #444;
+	color: white;
+	padding: 10px;
+	font-family: Arial;
+	font-weight: bold;
+
+	//margin-top: 15px; 
+}
+.delete-form{
+	
+	svg{
+		stroke: white;
+		width: 30px;
+		padding: 5px;
+		background: #3c465b;
+		margin: 5px;
+		border-radius: 30px;
+		height: 30px;
+		
+	}
+	svg:hover{
+			background: white;
+			stroke: #3c465b;
+		}
+	flex: 1;
+	
+	//margin-top: 25px;
+	display: flex;
+	justify-content: space-between;
+}
+
+input.ng-touched.ng-invalid{
+ border-color: red;
+}
+
+label {
+	font-size: 1.3em;
+	margin-right: 15px;
+}
+
+.input-css{
+	flex:1 1 100%;
+	position: relative;
+	display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+.error
+{
+	margin-bottom: 20px;
+    color: red;
+    position: absolute;
+    bottom: -25px;
+    right: 0;
+    margin-right: 25px;
+    text-align: right;
+    height: 10px;
+}
+.status-message{
+	padding: 60px;
+	background: white;
+	font-family: Arial;
+	font-weight: bold;
+	transition: 0.5s;
+	z-index: 45;
+	position: fixed;
+	border-radius: 25px 0px 0px 25px;
+	bottom:25%;
+	right: 0;
+	background: #a4c5ff;
+	text-align: center;
+    color: white;
+	span{
+
+	}
+}
+.parent {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    z-index: 5;
+    overflow: auto;
+}
+
+.add-ad
+{
+	position: fixed;
+	bottom: $addButton/2;
+	right: $addButton/2;
+	background: white;
+	height: $addButton;
+	width: $addButton;
+	animation: 5s;
+	border-radius: $addButton;
+	z-index: 99;
+	transition: 1s;
+	&:hover{
+		background: #3c465b;
+		& svg{
+			stroke: white; 
+		}
+	}
+	& svg{
+		 height: $addButton; stroke: #3c465b; 
+	}
+}

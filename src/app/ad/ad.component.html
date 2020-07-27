@@ -1,0 +1,20 @@
+<header class="title">
+    <h2 (click)="home()" routerLink="/">Объявление</h2>
+</header>
+<div class="ad">
+	<div class="loading" [style.opacity]="isLoading?'0':'100'" >
+		<img src="assets/tenor.gif"/>
+	</div>
+
+	<div class="ad-item">
+		<div class="ad-name"><h2>Наименование: {{singleAd?.title}}</h2></div>
+
+		<div class="ad-pic"><img src={{singleAd?.pic[0]}}/></div>
+
+		<div class="ad-desc"><b>Описание:</b> <br/>{{singleAd?.desc}}</div>
+		
+		<div class="ad-pic-fields" >
+			<img src={{pic}} *ngFor= "let pic of singleAd?.pic"/>
+		</div>
+	</div>
+</div>

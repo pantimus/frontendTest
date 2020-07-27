@@ -1,0 +1,28 @@
+<div class="loading" [style.opacity]="isLoading?'0':'100'"  [style.display]="isLoading?'none':'flex'">
+	<img src="assets/tenor.gif"/>
+</div>
+<table>
+	<thead>
+		<tr>
+			<th > id </th>
+			<th class = "pic_row"> Главное фото</th>
+			<th > Название</th>
+			<th class = "data_row"> Дата создания</th>
+		</tr>
+	</thead>
+	<tr *ngFor = "let ad of adsList"  [routerLink]="['ad', ad?.id]" >
+		<td> {{ad?.id}} </td>
+		<td> <img src={{ad?.pic}} /></td>
+		<td> {{ad?.title}}</td>
+		<td> {{ad?.data}} </td>
+	</tr>
+</table>
+
+
+
+<div class="paginator">
+	<a  (click)="gotoFirstPage()">Первая страница | </a>
+	<a  (click)="gotoPrevPage()" [style.display]="isFirstPage?'none':'block'" > ←Предыдущая | </a>
+	<a  (click)="gotoNextPage()" [style.display]="isLastPage?'none':'block'" >Следующая → | </a>
+	<a  (click)="gotoLastPage()">Последняя </a>
+</div>

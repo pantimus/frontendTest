@@ -1,0 +1,59 @@
+<div class="parent" [style.display]="isFormVisible?'block':'none'">
+    <form [formGroup]="FormValid" class= "form-add-product" (submit)="onSubmit()" >
+    <h2> Добавить в список объявлений </h2>
+
+        <div  class="input-group" >
+            <div class="input-css"><label for="title">Наименование *</label>
+            <input formControlName="title" type="text" id="title" class="form-control"  maxlength="200" placeholder="Введите наименование"  minlength="1" />
+            <div class="error" *ngIf="isControlInvalid('title')" >
+        Обязательное поле
+            </div></div>
+            <div class="input-css"><label for="desc">Описание *</label>
+            <textarea rows="10" cols="45"
+ formControlName="desc" type="text" class="form-control desc"    maxlength="1000" placeholder="Введите описание" ></textarea>
+        <div class="error" *ngIf="isControlInvalid('desc')" >
+        Введите описание
+        </div>
+    </div>
+            <div class="input-css"><label for="pic">Изображения *</label>
+            <input formControlName="pic" type="text" class="form-control"  maxlength="255"  placeholder="Введите описание"   minlength="1"  />
+                <div class="error" *ngIf="isControlInvalid('pic')" >
+                    Как минимум одно изображение
+                </div>
+            </div>
+            <div class="input-css"><label for="pic">Изображения дополнительное</label>
+            <input formControlName="pic1" type="text" class="form-control"  maxlength="255"  placeholder="Введите описание"   minlength="1"  />
+                
+            </div>
+            <div class="input-css"><label for="pic">Изображения дополнительное</label>
+            <input formControlName="pic2" type="text" class="form-control"  maxlength="255"  placeholder="Введите описание"   minlength="1"  />
+                
+            </div>
+        </div>
+     
+    
+    <div class="delete-form" >
+        <button class="btn" type="submit"  >
+        <span>Добавить</span>
+        </button>
+        <svg  xmlns="http://www.w3.org/2000/svg" (click)="toggle()" viewBox="0 0 100 100" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <line x1="10" y1="10" x2="100" y2="100"  stroke-width="10" />
+            <line x1="100" y1="10" x2="10" y2="100"  stroke-width="10" />
+        </svg>
+         
+    </div>
+
+   
+</form>
+</div>
+<div class="status-message" [style.opacity]="isStatusVisible?'100':'0'">
+    <span>{{msg}}</span>
+</div>
+
+<div class="add-ad" #sideNav (click)="toggle()">
+    <svg class="svg-circleplus" viewBox="0 0 100 100">
+  <circle cx="50" cy="50" r="45" fill="none" stroke-width="7.5"></circle>
+  <line x1="32.5" y1="50" x2="67.5" y2="50" stroke-width="5"></line>
+  <line x1="50" y1="32.5" x2="50" y2="67.5" stroke-width="5"></line>
+</svg>
+  </div>
